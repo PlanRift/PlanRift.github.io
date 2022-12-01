@@ -1,0 +1,1184 @@
+    /* root */
+
+    :root {
+        --color-darkgrey: #272832;
+        --color-grey: #212129;
+        --color-black: #212121;
+        --color-yellow: #F1BD48;
+        --transition: all 500ms ease;
+    }
+
+    /* some fonts */
+
+    /* font-family: 'Bebas Neue', cursive; */
+    /* font-family: 'Comfortaa', cursive; */
+    /* font-family: 'Gruppo', cursive; */
+    /* font-family: 'Quicksand', sans-serif; */
+
+    /* loading */
+    #loading {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 1;
+        background-color: #22282F;
+        z-index: 1000;
+    }
+    
+    #loading-image {
+        z-index: 1000;
+        width: 20%;
+    }
+
+    /* global what */
+    .line-horizontal{
+        background-color: white;
+        width: 7px;
+        height: 24rem;
+        margin-top: 0.4rem ;
+        margin-right: -10px;
+        position: absolute;
+        right: 0;
+        display: none;
+    }
+
+    .line {
+        position:center;
+        width: 103px;
+        height: 7px;
+        margin-bottom: 0.5rem;
+        background: white;
+        border-radius: 0px;
+    }
+
+    .line-2 {
+        width: 10rem;
+        height: 7px;
+        margin-bottom: 1rem;
+        background: white;
+        border-radius: 0px;
+    }
+
+    .line-3 {
+        width: 10rem;
+        height: 7px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 0px;
+    }
+
+    .line-4 {
+        width: 8rem;
+        height: 4px;
+        margin-bottom: 1rem;
+        margin-left: auto;
+        background: white;
+        border-radius: 0px;
+    }
+
+    .line-5 {
+        width: 8rem;
+        height: 4px;
+        margin-bottom: 1rem;
+        margin-right: auto;
+        background: white;
+        border-radius: 0px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        list-style: none;
+        text-decoration: none;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, h4, p, a {
+        color: white;
+    }
+
+    body {
+        font-family: 'Quicksand';
+        color: black;
+        background: var(--color-darkgrey);
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    /* nav */
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+    }
+
+    .navbar-small {
+        display: none;
+        margin-right: -2rem;
+    }
+
+    .navbar {
+        display: flex;
+        color: white;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 0;
+        font-family: 'Comfortaa', cursive;
+        font-size: 0.9rem;
+        column-gap: 1rem;
+    }
+
+    .main-logo {
+        transition: var(--transition);
+    }
+
+    .main-logo img {
+        width: 2rem;
+        margin: 0 2rem;
+    }
+
+    .main-logo:hover {
+        transform: scale(1.3) rotate(5deg);
+    }
+    .navbar-text {
+        color: white;
+        transition: var(--transition);
+        opacity: 50%;
+        max-width: max-content;
+    }
+
+    .navbar-text:hover {
+        font-size: 1.1rem;
+        letter-spacing: 0.2rem;
+        opacity: 100%;  
+    }
+
+    .linkedin {
+        width: 20px;
+        opacity: 50%;
+        margin: auto 0;
+        transition: var(--transition);
+        align-items: center;
+    }
+
+    .linkedin:hover {
+        opacity: 100%;
+        transform: scale(1.2);
+    }
+
+    .navbar-linkedin {
+        margin-left: 20rem;
+    }
+
+    .navbar-call {
+        padding: 2rem;
+    }
+
+    .material-icons {
+        opacity: 50%;
+        transition: var(--transition);  
+    }
+
+    .material-icons:hover {
+        opacity: 100%;
+        transform: scale(1.2);
+    }
+
+    @media screen and (max-width:737px) {
+        .navbar {
+            flex-wrap: wrap;
+        }
+
+        .navbar-small {
+            display: block;
+        }
+        
+        .navbar-small img {
+            width: 50%;
+        }   
+
+        .navbar-item {
+            text-align: center;
+            display: none;
+            width: 100%;
+            margin: 15px;
+        }
+        .active {
+            display: block;
+        }
+    }
+    /* end nav */
+
+    /* header */
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;  
+    }
+
+    .bg-vid {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        filter:opacity(60%);
+        z-index: -10;
+    }
+
+    .bg-vid video {
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        height: 110%;
+    }
+
+    .header-container h1 {
+        font-family: 'Bebas Neue', cursive;
+        line-height: 3rem;
+        text-align: left;
+    }
+
+    .title {
+        width: max-content;
+        font-size: 2rem;
+    }
+
+    .name {
+        width: max-content;
+        font-size: 5rem;
+        transition: var(--transition);
+        padding: 10px 0;
+        
+    }
+
+    .name:hover {
+        letter-spacing: 1rem;
+        font-size: 6rem;
+        padding: 20px 0;
+    }
+
+    .header-container p {
+        font-size: 1.5rem;
+    }
+    /* end header */
+
+    /* portofolio oh my god i wanna kill myself */
+    .portofolio {
+        background-color: var(--color-darkgrey);
+        margin-top: -3px;
+    }
+
+    .portofolio-nav {
+        position: -webkit-sticky;
+        position: sticky;
+        top:0;
+        height: 79.04px;
+        width: 100%;
+        background-color: var(--color-black);
+        z-index: 100;
+    }
+
+    .portofolio-title-talent {
+        letter-spacing: 1rem;
+        font-size: 4rem;
+        font-family: 'Bebas Neue';
+        padding: 2rem 0;
+        margin-bottom: 4rem;
+        background-color: var(--color-darkgrey);
+        position: relative;
+        width: 100%;
+        text-align: center;
+        background-color: var(--color-grey);
+    }
+
+    .portofolio-title-talent h1 {
+        transition: var(--transition);
+    }
+
+    .portofolio-title-talent h1:hover {
+        color: var(--color-grey);
+        text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
+    }
+
+    .talent-container {
+        padding-bottom: 4rem;
+    }
+
+    .portofolio-talent {
+        background-color: var(--color-grey);
+    }
+
+    .portofolio-talent h1 {
+        text-align: center;
+        transition: var(--transition);
+        text-shadow: 0;
+    }
+
+    .portofolio-talent h1:hover {
+        color: var(--color-black);
+        text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
+    }
+
+
+    .portofolio-title {
+        letter-spacing: 1rem;
+        font-size: 4rem;
+        font-family: 'Bebas Neue';
+        padding: 2rem 0;
+        background-color: var(--color-black);
+        position: absolute;
+        width: 100%;
+        z-index: 101;
+    }
+
+
+    .portofolio-title h1 {
+        text-align: center;
+        transition: var(--transition);
+        text-shadow: 0;
+    }
+
+    .portofolio-title h1:hover {
+        color: var(--color-black);
+        text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
+    }
+
+    .portofolio-title-2 {
+        font-family: 'Quicksand';
+        margin: 7rem 0;
+        letter-spacing: 1.5rem;
+        text-align: center;
+    }
+
+    .portofolio-things {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        margin-bottom: 5rem;
+    }
+    .portofolio-left {
+        position: relative;
+    }
+
+
+    .my-img {
+        height: 32rem;
+        width: 20rem;
+        object-fit: cover;
+        transition: var(--transition);
+        border-width: 1px;
+        border-color: white;
+        border-style: solid;
+        filter: grayscale(50%);
+    }
+
+    .my-img:hover {
+        transform:scale(1.05) translateX(10px) translateY(-10px);
+        border-spacing: 5rem;
+        border-width: 4px;
+        border-color: white;
+        border-style: solid;
+        filter: grayscale(0%);
+    }
+
+    .image-me {
+        max-width: max-content;
+    }
+
+    .my-img-small {
+        position: absolute;
+        width: 10rem;
+        top: 25rem;
+        left: 12rem;
+        border-width: 1px;
+        border-color: white;
+        border-style: solid;
+        transition: var(--transition);
+        filter: grayscale(50%);
+    }
+
+    .my-img-small:hover {
+        transform:scale(1.05) translateX(10px) translateY(-10px);
+        border-spacing: 5rem;
+        border-width: 4px;
+        border-color: white;
+        border-style: solid;
+        filter: grayscale(0%);
+    }
+
+    .portofolio-title-3 {
+        font-family: 'Quicksand';
+        text-align: center;
+        margin-bottom: 7rem;
+        letter-spacing: 2rem;
+    }
+
+    .portofolio-text {
+        text-align: right;
+        right: 0;
+    }
+
+    .portofolio-text h5 {
+        font-family: 'Bebas Neue';
+        font-size: 2.8rem;
+        color: white;
+        line-height: 150%;
+        font-style: italic;
+    }
+
+    .portofolio-text h2 {
+        font-size: 10rem;
+        font-family: 'Bebas Neue';
+        letter-spacing: 0.5rem;
+        font-style: italic;
+        transition: var(--transition);
+        line-height: 100%;
+        z-index: 10;
+    }
+
+    .portofolio-text h2:hover {
+        letter-spacing: 1.5rem;
+        text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
+        color: var(--color-darkgrey);
+    }
+
+    .main-porto {
+        background-color: var(--color-black);
+        padding-top: 4rem;
+        padding-bottom: 6rem;   
+    }
+
+    .portofolio-main {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        margin-bottom: 3rem;
+    }
+
+    .porto-me-left {
+        text-align: left;
+    }
+
+    .about-me-title h2 {
+        font-size: 10rem;
+        font-family: 'Bebas Neue';
+        letter-spacing: 0.5rem;
+        font-style: italic;
+        transition: var(--transition);
+        line-height: 100%;
+        z-index: 10;
+        color: white;
+    }
+
+    .about-me-title h2:hover {
+        letter-spacing: 1.5rem;
+        text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
+        color: var(--color-black);
+    }
+
+    .porto-me-right {
+        position: relative;
+    }
+
+    .porto-me-text {
+        font-size: 1rem;
+        font-family: 'Quicksand';
+    }
+
+    .portofolio-title-4 {
+        font-size: 0.9rem;
+        font-family: 'Quicksand';
+        text-align: center;
+        letter-spacing: 1.5rem;
+        margin-bottom: 4rem;
+    }
+
+    .certificate {
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .certi-1 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .certi-2 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .certi-3 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .certi-desc {
+        color: white;
+        text-align: center;
+        letter-spacing: 0.1rem;
+    }
+
+    .the-certi {
+        width: 15rem;
+        transition: var(--transition);
+    }   
+
+
+    .the-certi:hover {
+        transform: scale(2.3);
+    }
+
+    .me-car {
+        display: block;
+        margin-left: auto;
+        width: 20rem;
+        height: 35rem;
+        object-fit: cover;
+        transition: var(--transition);
+        border-width: 1px;
+        border-color: white;
+        border-style: solid;
+        filter: grayscale(50%);
+    }
+
+    .me-car:hover {
+        transform:scale(1.05) translateX(-10px) translateY(-10px);
+        border-spacing: 5rem;
+        border-width: 4px;
+        border-color: white;
+        border-style: solid;
+        filter: grayscale(0%);
+    }
+    /* talent */
+
+    .talent {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        width: 90%;
+        margin: auto auto;
+        overflow: hidden;
+    }
+
+    .video-editing {
+        font-size: 5rem;
+        font-family: 'Bebas Neue';
+        letter-spacing: 0.2rem;
+        font-style: italic;
+        transition: var(--transition);
+        line-height: 100%;
+        z-index: 10;
+    }
+
+    .video-editing-text {
+        font-family: 'Quicksand';
+    }
+
+    .experience {
+        margin-top: 0.5rem;
+    }
+
+    .experience h2 {
+        font-size: 1rem;
+        font-family:'Bebas Neue';
+        font-weight: 100;
+        color: var(--color-yellow);
+    }
+
+    .talent-editing-left {
+        padding: 1rem;
+        position: relative;
+        z-index: 4;
+    }
+
+    .talent-editing-right {
+        text-align: center;
+        z-index: 2;
+
+    }
+
+    .talent {
+        overflow-x: hidden;
+        position: relative;
+        height: 100%;
+    }
+    #editing-img {
+        z-index: 1; 
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 1rem;
+        transition: var(--transition);
+        filter: grayscale(100%);
+    }
+
+    #editing-img:hover {
+        border-radius: 0;
+        transform: scale(1.1);
+        filter: grayscale(0%);
+    }
+
+    .line-talent {
+        width: 70%;
+        height: 3px;
+        margin: 2rem auto;
+        background: white;
+        border-radius: 0px;
+    }
+
+    /* sample */
+    .sample-container {
+        position: relative;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .sample-main {
+        display: grid;
+        align-content: space-evenly;
+        grid-template-columns: auto auto;
+        padding: 2rem 0;
+    }
+
+    .sample-title {
+        letter-spacing: 1rem;
+        font-size: 4rem;
+        font-family: 'Bebas Neue';
+        padding: 2rem 0;
+        margin-bottom: 4rem;
+        position: relative;
+        width: 100%;
+        z-index: 99;
+        text-align: center;
+    }
+
+    .sample-title h1 {
+        transition: var(--transition);
+    }
+
+    .sample-title h1:hover {
+        color: var(--color-grey);
+        text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
+    }
+
+    .sample-text {  
+        text-align: right;
+    }
+
+    .sample-right {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .sample-right h1 {
+        font-size: 4rem;
+        font-family: 'Bebas Neue';
+        transition: var(--transition);
+        width: 30rem;
+        display: block;
+        margin-left: auto;
+    }
+
+    .sample-right h1:hover {
+        letter-spacing: 0.2rem;
+    }
+
+    .sample-right p {
+        font-size: 1rem;
+    }
+
+    .sample-left {
+        padding-top: auto;
+        padding-bottom: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .website-photo {
+        width: 25rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: var(--transition);
+    }
+
+    .website-photo-hidden {
+        width: 25rem;
+        display: none;
+    }
+
+    .website-photo-hidden-2 {
+        width: 25rem;
+        display: none;
+        margin-left: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sample-left-2 {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .sample-left-2 h1 {
+        font-size: 4rem;
+        font-family: 'Bebas Neue';
+        transition: var(--transition);
+        width: 30rem;
+    }
+
+    .sample-left-2 h1:hover {
+        letter-spacing: 0.2rem;
+    }
+    .sample-left-2 p {
+        font-size: 1rem;
+    }
+
+    .sample-text-2 {
+        text-align: left;
+    }
+
+    .website-photo-3 {
+        width: 25rem;
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        transition: var(--transition);
+    }
+
+    .website-photo:hover {
+        transform: scale(1.3);
+    }
+
+    .website-photo-3:hover {
+        transform: scale(1.3);
+    }
+
+    /* Ratings */
+    .ratings-container {
+        display: grid;
+        align-content: space-evenly;
+        grid-template-columns: auto auto;
+        width: 60%;
+        margin: 4rem auto;
+    }
+
+    .this img {
+        width: 50px;
+        margin-bottom: 3rem;
+    }
+
+    .ratings-image {
+        margin-right: 3rem;
+        margin-left: auto;
+    }
+
+    .ratings-image img {
+        width: 13rem;
+    }
+
+
+    .ratings-right h3 {
+        font-size: 1.3rem;
+    }
+
+    .ratings-right h4 {
+        margin-top: 4rem;
+        font-size: 0.9rem;
+    }
+
+    .ratings-right p {
+        opacity: 50%;
+        font-size: 0.8rem;
+    }
+
+    /* footer */
+    .footer {
+        display:grid;
+        padding: 1rem 0rem;
+        gap: 1rem;
+        background-color: var(--color-black);
+        font-family: 'Gruppo';
+        font-weight: lighter ;
+        letter-spacing: 5px;
+        justify-content: center;
+    }
+    .footer__header {
+        font-size: 2rem;
+        letter-spacing: 10px;
+        margin-bottom: 5px;
+    }
+    
+    .footer__text {
+        font-size: 10px;
+        text-align: center ;
+        line-height: 10px;
+    }
+    
+    .footer__container {
+        display: flex;
+        font-weight: bold;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-transform: capitalize;
+        line-height: 2rem;
+    }
+    .socials {
+        list-style: none;
+        display: flex;
+        letter-spacing: 5px;
+        color: white;
+    }
+    /* end footer */
+    
+
+    @media screen and (max-width:912px) {
+        #editing-img {
+            display: flex;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .container {
+            width: 90%;
+        }
+
+        .video-editing {
+            font-size: 3rem;
+        }
+
+        .portofolio-text h2 {
+            font-size: 8rem;
+            line-height: 10rem;
+        }
+
+        .portofolio-text h5 {
+            font-size: 3rem;
+        }
+
+        .portofolio-text {
+            overflow: hidden;
+            padding-right: 1rem;
+        }
+
+        .portofolio-main {
+            overflow-x: hidden;
+        }
+        
+        .certificate {
+            grid-template-columns: repeat(1,1fr);
+            padding: 0;
+            margin: 0 auto;
+        }
+
+        .the-certi {
+            width: 12rem;
+            padding: 1rem 0;
+        }
+
+        .website-photo-3 {
+            width: 15rem;
+        }
+
+        .website-photo {
+            width: 15rem;
+        }
+
+        .sample-right h1 {
+            width: 20rem;
+        }
+        /* .sample-main {
+            grid-template-columns: repeat(1,1fr);
+        }
+
+        .sample {
+            margin-bottom: 19rem;
+        }
+
+        .sample-left-2 {
+            margin-top: 15rem;
+        }
+
+        .sample-left {
+            position: absolute;
+            margin: 10rem 0;
+        }
+
+        .website-photo-3 {
+            width: 30%;
+        }
+
+        .website-photo {
+            width: 30%;
+        } */
+    }
+
+    @media screen and (max-width:768px) {
+        #editing-img {
+            height: 250px;
+        }
+
+        .portofolio-text h2 {
+            font-size: 9rem;
+            line-height: 9rem;
+        }
+
+        .portofolio-title {
+            font-size: 2rem;
+        }
+
+        .image-me {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .my-img {
+            height: 28rem;
+            max-width: 30rem;
+            margin-bottom: 1rem;
+        }
+
+        .my-img:hover {
+            transform:scale(1.05) translateX(0px) translateY(0px);
+        }
+
+        .line-horizontal {
+            display: none;
+        }
+
+        .my-img-small {
+            display: none;
+        }
+
+        .about-me-title h2 {
+            font-size: 6rem;
+        }
+
+        .me-car {
+            width: 17rem;
+            height: 23rem;
+        }
+        
+        .portofolio-things {
+            grid-template-columns: repeat(1,1fr);
+        }
+        
+        .portofolio-text {
+            text-align: center;
+        }
+
+        .portofolio-title-4 {
+            letter-spacing: 0.6rem;
+        }
+        .container {
+            width: 90%;
+        }
+
+        .talent {
+            grid-template-columns: repeat(1,1fr);
+        }
+
+        .ratings-container {
+            grid-template-columns: repeat(1,1fr);
+        }
+
+        .ratings-image img{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 15rem;
+            height: 10rem;
+            object-fit: cover;
+            margin: 0 auto;
+            object-position: 90% 10%;
+        }
+        .ratings-image {
+            display: none;
+            margin: 0 auto;
+        }
+
+        .sample-right h1 {
+            font-size: 3rem;
+        }
+
+        .sample-left-2 h1 {
+            font-size: 3rem;
+        }
+
+        .website-photo {
+            display: none;
+        }
+
+        .website-photo-3 {
+            display: none;
+        }
+
+        .website-photo-hidden {
+            display: flex;
+        }
+        .website-photo-hidden-2 {
+            display: flex;
+        }
+    }
+
+    @media screen and (max-width:650px) {
+        .portofolio-main {
+            grid-template-columns: repeat(1,1fr);
+        }
+
+        .me-car {
+            width: 26rem;
+            height: 35rem;
+            margin-right: auto;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .about-me-title {
+        text-align: center;
+        }
+
+        .portofolio-title-3 {
+            display: none;
+        }
+
+        .about {
+            margin-right: 5rem;
+        }
+
+        .me {
+            margin-left: 9rem;
+        }
+
+        .line-2 {
+            display: none;
+        }
+
+        .porto-me-text {
+            text-align: center;
+        }
+    }
+
+    @media screen and (max-width:1280px) {
+        .experience h2 {
+            font-size: 2rem;
+        }
+    }
+
+    @media screen and (max-width:480px) {
+        .header-content {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .name {
+            font-size: 4.2rem;
+        }
+
+        .name:hover {
+            font-size: 4.3rem;
+            line-height: 2rem;
+            letter-spacing: 0.3rem;
+        }
+
+        .header-content p{
+            font-size: 0.7rem;
+        }
+
+        .sample-text h1{
+            width: 50%;
+            font-size: 2rem;
+        }
+        .sample-text-2 h1 {
+            width: 50%;
+            font-size: 2rem;
+        }
+        .sample-text p{
+            font-size: 0.8rem;
+        }
+        .website-photo-hidden {
+            width: 17rem;
+        }
+
+        .website-photo-hidden-2 {
+            width: 17rem;
+        }
+        .me-car {
+            width: 15rem;
+            height: 23rem;
+        }
+
+        .portofolio-text h2 {
+            font-size: 4rem;
+            line-height: 4rem;
+        }
+
+        .portofolio-text h5 {
+            font-size: 2rem;
+            line-height: 3rem;
+        }
+
+        .my-img {
+            width: 15rem;
+            height: 23rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .container {
+            width: 100%;
+        }
+        
+        .my-img {
+            overflow: hidden;
+        }
+        .portofolio-left {
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .portofolio-right {
+            width: 100%;
+        }
+        #editing-img {
+            width: 20rem;
+            height: 200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .ratings-right h3 {
+            font-size: 1rem;
+        }
+    }

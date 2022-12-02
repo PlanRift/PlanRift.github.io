@@ -206,6 +206,8 @@
     @media screen and (max-width:737px) {
         .navbar {
             flex-wrap: wrap;
+            background: var(--color-black);
+            padding: 7px 0;
         }
 
         .navbar-small {
@@ -221,6 +223,8 @@
             display: none;
             width: 100%;
             margin: 15px;
+            opacity: 100%;
+
         }
         .active {
             display: block;

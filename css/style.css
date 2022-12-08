@@ -552,7 +552,7 @@
 
 
     .the-certi:hover {
-        transform: scale(2.3);
+        transform: scale(1.6);
     }
 
     .me-car {
@@ -1122,6 +1122,9 @@
     }
 
     @media screen and (max-width:480px) {
+        .about-me-title h2:hover {
+            letter-spacing: 0;
+        }
         .header-content {
             width: 90%;
             margin-left: auto;

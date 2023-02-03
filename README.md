@@ -1,6 +1,6 @@
-# PLANRIFT PORTOFOLIO WEBSITE
+# PLANRIFT PORTFOLIO WEBSITE
 
-💫A Portofolio Webiste of Me!💫
+💫A Portfolio Webiste of Me!💫
 
 ## Visiting
 

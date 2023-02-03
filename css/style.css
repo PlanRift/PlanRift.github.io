@@ -1,9 +1,9 @@
     /* root */
 
     :root {
-        --color-darkgrey: #272832;
-        --color-grey: #212129;
-        --color-black: #212121;
+        --color-darkgrey: #1a1b20;
+        --color-grey: #1a1a1f;
+        --color-black: #1a1a1a;
         --color-yellow: #F1BD48;
         --transition: all 500ms ease;
     }

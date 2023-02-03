@@ -286,13 +286,13 @@
     }
     /* end header */
 
-    /* portofolio oh my god i wanna kill myself */
-    .portofolio {
+    /* portfolio oh my god i wanna kill myself */
+    .portfolio {
         background-color: var(--color-darkgrey);
         margin-top: -3px;
     }
 
-    .portofolio-nav {
+    .portfolio-nav {
         position: -webkit-sticky;
         position: sticky;
         top:0;
@@ -302,7 +302,7 @@
         z-index: 100;
     }
 
-    .portofolio-title-talent {
+    .portfolio-title-talent {
         letter-spacing: 1rem;
         font-size: 4rem;
         font-family: 'Bebas Neue';
@@ -315,11 +315,11 @@
         background-color: var(--color-grey);
     }
 
-    .portofolio-title-talent h1 {
+    .portfolio-title-talent h1 {
         transition: var(--transition);
     }
 
-    .portofolio-title-talent h1:hover {
+    .portfolio-title-talent h1:hover {
         color: var(--color-grey);
         text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
     }
@@ -328,23 +328,23 @@
         padding-bottom: 4rem;
     }
 
-    .portofolio-talent {
+    .portfolio-talent {
         background-color: var(--color-grey);
     }
 
-    .portofolio-talent h1 {
+    .portfolio-talent h1 {
         text-align: center;
         transition: var(--transition);
         text-shadow: 0;
     }
 
-    .portofolio-talent h1:hover {
+    .portfolio-talent h1:hover {
         color: var(--color-black);
         text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
     }
 
 
-    .portofolio-title {
+    .portfolio-title {
         letter-spacing: 1rem;
         font-size: 4rem;
         font-family: 'Bebas Neue';
@@ -356,31 +356,31 @@
     }
 
 
-    .portofolio-title h1 {
+    .portfolio-title h1 {
         text-align: center;
         transition: var(--transition);
         text-shadow: 0;
     }
 
-    .portofolio-title h1:hover {
+    .portfolio-title h1:hover {
         color: var(--color-black);
         text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
     }
 
-    .portofolio-title-2 {
+    .portfolio-title-2 {
         font-family: 'Quicksand';
         margin: 7rem 0;
         letter-spacing: 1.5rem;
         text-align: center;
     }
 
-    .portofolio-things {
+    .portfolio-things {
         position: relative;
         display: grid;
         grid-template-columns: repeat(2,1fr);
         margin-bottom: 5rem;
     }
-    .portofolio-left {
+    .portfolio-left {
         position: relative;
     }
 
@@ -430,19 +430,19 @@
         filter: grayscale(0%);
     }
 
-    .portofolio-title-3 {
+    .portfolio-title-3 {
         font-family: 'Quicksand';
         text-align: center;
         margin-bottom: 7rem;
         letter-spacing: 2rem;
     }
 
-    .portofolio-text {
+    .portfolio-text {
         text-align: right;
         right: 0;
     }
 
-    .portofolio-text h5 {
+    .portfolio-text h5 {
         font-family: 'Bebas Neue';
         font-size: 2.8rem;
         color: white;
@@ -450,7 +450,7 @@
         font-style: italic;
     }
 
-    .portofolio-text h2 {
+    .portfolio-text h2 {
         font-size: 10rem;
         font-family: 'Bebas Neue';
         letter-spacing: 0.5rem;
@@ -460,7 +460,7 @@
         z-index: 10;
     }
 
-    .portofolio-text h2:hover {
+    .portfolio-text h2:hover {
         letter-spacing: 1.5rem;
         text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
         color: var(--color-darkgrey);
@@ -472,7 +472,7 @@
         padding-bottom: 6rem;   
     }
 
-    .portofolio-main {
+    .portfolio-main {
         display: grid;
         grid-template-columns: repeat(2,1fr);
         margin-bottom: 3rem;
@@ -508,7 +508,7 @@
         font-family: 'Quicksand';
     }
 
-    .portofolio-title-4 {
+    .portfolio-title-4 {
         font-size: 0.9rem;
         font-family: 'Quicksand';
         text-align: center;
@@ -908,21 +908,21 @@
             font-size: 3rem;
         }
 
-        .portofolio-text h2 {
+        .portfolio-text h2 {
             font-size: 8rem;
             line-height: 10rem;
         }
 
-        .portofolio-text h5 {
+        .portfolio-text h5 {
             font-size: 3rem;
         }
 
-        .portofolio-text {
+        .portfolio-text {
             overflow: hidden;
             padding-right: 1rem;
         }
 
-        .portofolio-main {
+        .portfolio-main {
             overflow-x: hidden;
         }
         
@@ -979,12 +979,12 @@
             height: 250px;
         }
 
-        .portofolio-text h2 {
+        .portfolio-text h2 {
             font-size: 9rem;
             line-height: 9rem;
         }
 
-        .portofolio-title {
+        .portfolio-title {
             font-size: 2rem;
         }
 
@@ -1021,15 +1021,15 @@
             height: 23rem;
         }
         
-        .portofolio-things {
+        .portfolio-things {
             grid-template-columns: repeat(1,1fr);
         }
         
-        .portofolio-text {
+        .portfolio-text {
             text-align: center;
         }
 
-        .portofolio-title-4 {
+        .portfolio-title-4 {
             letter-spacing: 0.6rem;
         }
         .container {
@@ -1087,7 +1087,7 @@
         .the-certi {
             width: 11rem;
         }
-        .portofolio-main {
+        .portfolio-main {
             grid-template-columns: repeat(1,1fr);
         }
 
@@ -1103,7 +1103,7 @@
         text-align: center;
         }
 
-        .portofolio-title-3 {
+        .portfolio-title-3 {
             display: none;
         }
 
@@ -1176,12 +1176,12 @@
             height: 23rem;
         }
 
-        .portofolio-text h2 {
+        .portfolio-text h2 {
             font-size: 4rem;
             line-height: 4rem;
         }
 
-        .portofolio-text h5 {
+        .portfolio-text h5 {
             font-size: 2rem;
             line-height: 3rem;
         }
@@ -1200,12 +1200,12 @@
         .my-img {
             overflow: hidden;
         }
-        .portofolio-left {
+        .portfolio-left {
             margin-right: auto;
             margin-left: auto;
         }
 
-        .portofolio-right {
+        .portfolio-right {
             width: 100%;
         }
         #editing-img {

@@ -436,11 +436,17 @@
         filter: grayscale(0%);
     }
 
+    .T {
+        margin-right: 1rem;
+    }
+
     .portfolio-title-3 {
         font-family: 'Quicksand';
         text-align: center;
         margin-bottom: 7rem;
         letter-spacing: 2rem;
+        display: flex;
+        justify-content: center;
     }
 
     .portfolio-text {

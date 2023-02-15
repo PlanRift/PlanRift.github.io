@@ -304,6 +304,7 @@
 
     .portfolio-title-talent {
         letter-spacing: 1rem;
+        text-indent: 1rem;
         font-size: 4rem;
         font-family: 'Bebas Neue';
         padding: 2rem 0;

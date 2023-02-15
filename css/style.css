@@ -347,6 +347,7 @@
 
     .portfolio-title {
         letter-spacing: 1rem;
+        text-indent: 1rem;
         font-size: 4rem;
         font-family: 'Bebas Neue';
         padding: 2rem 0;
@@ -375,6 +376,7 @@
         margin-left: auto;
         margin-right: auto;
         letter-spacing: 1.5rem;
+        margin-left: 1.5rem;
         text-align: center;
         display: flex;
         justify-content: center;

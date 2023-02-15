@@ -1239,6 +1239,7 @@
 
         .portfolio-right {
             width: 100%;
+            text-indent: 1rem;
         }
         #editing-img {
             width: 20rem;

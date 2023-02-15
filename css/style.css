@@ -822,8 +822,22 @@
         margin-left: auto;
     }
 
-    .ratings-image img {
+    .ratings-image {
         width: 13rem;
+    }
+
+    .rick {
+        background-image: url(/images/rick.webp);
+        background-size: cover;
+        background-position: 60%;
+        height: 40vh;
+        width: 15vw;
+        transition: all 200ms ease ;
+    }
+
+    .rick:hover {
+        background-image: url(/images/rickroll-roll.gif);
+        background-size: cover;
     }
 
 

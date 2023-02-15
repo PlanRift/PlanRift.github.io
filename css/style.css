@@ -687,6 +687,7 @@
 
     .sample-title {
         letter-spacing: 1rem;
+        text-indent:1rem;
         font-size: 4rem;
         font-family: 'Bebas Neue';
         padding: 2rem 0;
@@ -870,6 +871,7 @@
     .footer__header {
         font-size: 2rem;
         letter-spacing: 10px;
+        text-indent: 10px;
         margin: 10px 0px; 
         text-shadow: -1px 2px 17px rgba(255,255,255,0.6);
     }

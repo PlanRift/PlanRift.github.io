@@ -499,6 +499,7 @@
         font-size: 10rem;
         font-family: 'Bebas Neue';
         letter-spacing: 0.5rem;
+        text-indent: 1rem;
         font-style: italic;
         transition: var(--transition);
         line-height: 100%;

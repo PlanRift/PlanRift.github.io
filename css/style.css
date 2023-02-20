@@ -1255,6 +1255,15 @@
             font-size: 1rem;
         }
         .certificate {
-            grid-template-columns: repeat(1,1fr);
+            width: 100%;
+
+        }
+        .the-certi {
+            width: 8rem;
+            margin: 8px;
+        }
+
+        .certi-desc {
+            font-size: 0.6rem;
         }
     }

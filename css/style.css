@@ -924,6 +924,7 @@
     /* end footer */
 
     /* submission */
+    
 
     .submission_title {
         font-size: 0.8rem;
@@ -951,7 +952,7 @@
       .name_input,
       .text_input,
       .message_input {
-        background-color: var(--color-grey);
+        background-color: var(--color-darkgrey);
         margin-bottom: 10px;
         padding: 10px;
         /* border: 1px solid #ffffff; */
@@ -979,7 +980,7 @@
         margin-left: auto;
         margin-right: auto;
         padding: 10px;
-        background-color: var(--color-grey);
+        background-color: var(--color-darkgrey);
         color: #fff;
         border-radius: 5px;
         font-size: 16px;

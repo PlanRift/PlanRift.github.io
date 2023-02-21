@@ -1015,6 +1015,11 @@
         opacity: 0;
         }
           
+        .warning {
+            color: red;
+            margin-top: 5px;
+            font-size: 14px;
+          }
 
       @media only screen and (max-width: 768px) {
         .submission_form {

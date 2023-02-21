@@ -933,6 +933,7 @@
         text-align: center;
         display: flex;
         justify-content: center;
+        text-indent: 1.5rem;
     }
 
     .submission_form {

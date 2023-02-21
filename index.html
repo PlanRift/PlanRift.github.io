@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./js/jquery.js"></script>
+    <script src="./js/warning.js"></script>
     <title>PlanRift</title>
 
     <!-- AOS Animation -->
@@ -336,7 +337,7 @@
             <h1 data-aos="fade-down" data-aos-duration="700" data-aos-delay="400">E</h1>
         </div>
         <section class="submission" data-aos="fade-up" data-aos-duration="1000">
-            <form class="submission_form" action="https://formsubmit.co/110e571796daa79fc7fa03e92ed33ff9" method="POST">
+            <form class="submission_form" id="myForm" action="https://formsubmit.co/110e571796daa79fc7fa03e92ed33ff9" method="POST">
                 <input class="email_input" type="email" name="email" required placeholder="EMAIL">
                 <input class="name_input" type="text" name="name" required placeholder="NAME">
                 <input class="text_input" type="text" name="subject" required placeholder="Subject">
@@ -345,6 +346,35 @@
                 <input type="hidden" name="_template" value="table">
                 <button class="button_input" type="submit">Submit</button>
             </form>
+            <script>
+                const form = document.querySelector('.submission_form');
+                const emailInput = form.querySelector('.email_input');
+                
+                form.addEventListener('submit', function(event) {
+                  if (!isEmailValid(emailInput.value)) {
+                    event.preventDefault();
+                    emailInput.classList.add('invalid');
+                    const warning = document.createElement('p');
+                    warning.textContent = 'Please enter a valid email address.';
+                    warning.classList.add('warning');
+                    emailInput.parentNode.insertBefore(warning, emailInput.nextSibling);
+                  }
+                });
+                
+                emailInput.addEventListener('input', function() {
+                  if (isEmailValid(emailInput.value)) {
+                    emailInput.classList.remove('invalid');
+                    const warning = emailInput.parentNode.querySelector('.warning');
+                    if (warning) {
+                      warning.remove();
+                    }
+                  }
+                });
+                
+                function isEmailValid(email) {
+                  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+                }
+            </script>
         </section>
         <footer>
             <div class="footer">

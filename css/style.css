@@ -922,7 +922,93 @@
         color: white;
     }
     /* end footer */
-    
+
+    /* submission */
+
+    .submission_form {
+        display: flex;
+        flex-direction: column;
+        width: 50vw;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 5px;
+        background-color: var(--color-black);
+        margin-bottom: 1rem;
+      }
+      
+      .email_input,
+      .name_input,
+      .text_input,
+      .message_input {
+        background-color: var(--color-grey);
+        margin-bottom: 10px;
+        padding: 10px;
+        /* border: 1px solid #ffffff; */
+        border-radius: 5px;
+        font-size: 16px;
+        font-family: Comfortaa;
+        color: white;
+      }
+      
+      .email_input:focus,
+      .name_input:focus,
+      .text_input:focus,
+      .message_input:focus {
+        outline: none;
+      }
+      
+      .text_input {
+        text-transform: uppercase;
+      }
+      
+      .button_input {
+        width: 50vw;
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        background-color: var(--color-grey);
+        color: #fff;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: var(--transition);
+        font-family: Comfortaa;
+      }
+      
+      .button_input:hover { 
+        letter-spacing: 3px;
+        text-indent: 3px;
+        background-color: rgb(100, 100, 100);
+      }
+      
+      /* Add a transition to the placeholder */
+        .email_input::-webkit-input-placeholder,
+        .name_input::-webkit-input-placeholder,
+        .text_input::-webkit-input-placeholder,
+        .message_input::-webkit-input-placeholder {
+        transition: all 0.3s ease;
+        }
+
+        /* Change the opacity of the placeholder when there is text input */
+        .email_input:focus::-webkit-input-placeholder,
+        .name_input:focus::-webkit-input-placeholder,
+        .text_input:focus::-webkit-input-placeholder,
+        .message_input:focus::-webkit-input-placeholder,
+        .email_input:not(:placeholder-shown)::-webkit-input-placeholder,
+        .name_input:not(:placeholder-shown)::-webkit-input-placeholder,
+        .text_input:not(:placeholder-shown)::-webkit-input-placeholder,
+        .message_input:not(:placeholder-shown)::-webkit-input-placeholder {
+        opacity: 0;
+        }
+          
+
+      @media only screen and (max-width: 768px) {
+        .submission_form {
+          width: 90vw;
+        }
+      }
+
     @media screen and (max-width:1230px) {
         .certificate {
             grid-template-columns: repeat(2,1fr);

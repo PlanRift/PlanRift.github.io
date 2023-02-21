@@ -958,6 +958,7 @@
         font-size: 16px;
         font-family: Comfortaa;
         color: white;
+        resize: none;
       }
       
       .email_input:focus,

@@ -927,15 +927,15 @@
     
 
     .submission_title {
-        font-size: 0.8rem;
+        font-size: 0.6rem;
         font-family: 'Quicksand';
-        letter-spacing: 1.5rem;
+        letter-spacing: 1rem;
         margin-bottom: 4rem;
         text-align: center;
         display: flex;
         justify-content: center;
-        text-indent: 1.5rem;
-    }
+        text-indent: 1rem;
+    }    
 
     .submission_form {
         display: flex;
@@ -1023,7 +1023,7 @@
 
       @media only screen and (max-width: 768px) {
         .submission_form {
-          width: 90vw;
+          width: 80vw;
         }
       }
 
@@ -1033,6 +1033,11 @@
         }
     }
     @media screen and (max-width:912px) {
+        .submission_title {
+            font-size: 0.5rem;
+
+        }
+
         #editing-img {
             display: flex;
             height: 200px;

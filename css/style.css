@@ -99,6 +99,10 @@
         text-decoration: none;
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
+
 
     h1, h2, h3, h4, p, a {
         color: white;
@@ -133,6 +137,14 @@
         margin-right: -2rem;
     }
 
+    .navbar-background {
+        background-color: #1a1a1a;
+        position: fixed;
+        width: 100%;
+        height: 0vh;
+        transition: var(--transition);
+    }
+
     .navbar {
         display: flex;
         color: white;
@@ -146,6 +158,7 @@
 
     .main-logo {
         transition: var(--transition);
+        z-index: 99;
     }
 
     .main-logo img {
@@ -209,6 +222,7 @@
 
         .navbar-small {
             display: block;
+            z-index: 99;
         }
         
         .navbar-small img {

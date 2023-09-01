@@ -2,6 +2,10 @@
 
 💫A Portfolio Webiste of Me!💫
 
+## WARNING!!
+this is only a project thing that I do for my school, this website ain't making me print money.
+a lot of things inside this website are copyrighted such as the videos and things.
+
 ## Visiting
 
 Open [planrift.github.io](https://planrift.github.io)

@@ -1,13 +1,26 @@
-// Get Navbar toggle button
-const toggleButton = document.getElementsByClassName("navbar-small")[0];
+const vid = document.getElementById("street");
 
-// Get Navbar Item
-const navbarItems = document.getElementsByClassName("navbar-item");
+window.addEventListener("scroll", function() {
+    const scrollPosition = window.pageYOffset;
+    vid.style.transform = `translateY(${scrollPosition * 0.3}px)`;
+});
 
-// Event when toggle button is clicked
-toggleButton.addEventListener("click", () => {
-    // transition navbar items
-    for (let i = 0; i < navbarItems.length; i++) {  
-        navbarItems[i].classList.toggle("active")
-    }
+document.addEventListener("DOMContentLoaded", function() {
+  CustomEase.create("custom", "M0,0,C0,0.8,0.139,0.86,0.224,0.918,0.344,1,0.504,1,1,1");
+
+  for (let i = 1; i <= 8; i++) {
+    const elementClass = `.big-header-${i}`;
+    const animationDelay = 0.5 + (i - 1) * 0.06;
+    
+    gsap.from(elementClass, {
+      y: -400,
+      duration: 0.9,
+      delay: animationDelay,
+      ease: "custom"
+    });
+  }
+
+  gsap.to(".opening", {y: -830, opacity: 0, duration: 1, delay: 3, ease: CustomEase.create("custom", "M0,0 C0.7,0 0.198,1 1,1 ")});
+  gsap.to(".the-header", {y: 400, duration: 1, delay: 3, ease: CustomEase.create("custom", "M0,0 C0.7,0 0.198,1 1,1 ")})
+  gsap.from(".background", {y: 800, duration: 1, delay: 3, ease: CustomEase.create("custom", "M0,0 C0.7,0 0.198,1 1,1 ")});
 });

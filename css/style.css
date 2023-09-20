@@ -15,7 +15,7 @@
     /* font-family: 'Gruppo', cursive; */
     /* font-family: 'Quicksand', sans-serif; */
 
-    /* loading */
+    /* loading
     #loading {
         position: fixed;
         display: flex;
@@ -33,7 +33,7 @@
     #loading-image {
         z-index: 1000;
         width: 20%;
-    }
+    } */
 
     /* global what */
     .line-horizontal{
@@ -129,7 +129,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        z-index: 999;
+        z-index: 90;
     }
 
     .navbar-small {
@@ -154,12 +154,12 @@
         font-family: 'Comfortaa', cursive;
         font-size: 0.9rem;
         column-gap: 1rem;
-        z-index: 99;
+        z-index: 80;
     }
 
     .main-logo {
         transition: var(--transition);
-        z-index: 99;
+        z-index: 80;
     }
 
     .main-logo img {
@@ -223,7 +223,7 @@
 
         .navbar-small {
             display: block;
-            z-index: 99;
+            z-index: 80;
         }
         
         .navbar-small img {
@@ -251,6 +251,59 @@
         align-items: center;
         justify-content: center;
         height: 100vh;  
+    }
+
+    .background img {
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        transform: scale(1.5);
+        z-index: -1;
+    }
+    
+    .opening {
+        display: flex;
+        align-items: center;
+        height: 100vh;  
+        z-index: 99;
+        overflow: hidden;
+        position: fixed;
+        background-color: var(--color-darkgrey);
+    }
+    
+    .header-text {
+        z-index: 99;
+        width: 100vw;
+    }
+    
+    .below-header {
+        color: white;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: max-content;
+        height: max-content;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 2rem;
+        letter-spacing: 10px;
+    }
+    
+    .the-header {
+        color: white;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: max-content;
+        height: max-content;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 2rem;
+        letter-spacing: 10px;
     }
 
     .bg-vid {
@@ -326,7 +379,7 @@
         height: 79.04px;
         width: 100%;
         background-color: var(--color-black);
-        z-index: 99;
+        z-index: 50;
     }
 
     .portfolio-title-talent {
@@ -381,7 +434,7 @@
         background-color: var(--color-black);
         position: absolute;
         width: 100%;
-        z-index: 101;
+        z-index: 80;
     }
 
 

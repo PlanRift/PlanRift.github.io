@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+li {
+    color: white;
+}
+
+
+/* Firefox */
+
+
+::-moz-selection {
+    color: white;
+    background: black;
+}
+
+::selection {
+    color: white;
+    background: black;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+html {
+    background-color: black;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 1;
+}
+
+/* header */
+
+.header {
+    height: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.textbox {
+    width: 90%;
+    margin: auto;
+    font-family: "Gilda Display", serif;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.second-header {
+    font-size: 3rem;
+    font-weight: 400;
+    margin-right: 1rem;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.textbox h3 {
+    font-weight: 400;
+    font-size: 2rem;
+    display: flex;
+    justify-content: end;
+}
+
+.main-header {
+    font-size: 3rem;
+    font-weight: 400;
+    margin-right: 1rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    cursor: pointer;
+    max-width: max-content;
+}
+.main-header span {
+    display: inline-block;
+    transform-origin: center;
+}
+
+/* image */
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+.container .image-container {
+    display: flex;
+    gap: 0.3rem;
+    justify-content: space-between;
+}
+
+.container .image-container .column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+
+}
+
+.container .image-container img {
+    width: 100%;
+    height: auto;
+    transition: all 1s cubic-bezier(.3, 0, .05, .99);
+    cursor: pointer;
+}
+
+.container .image-container img:hover {
+    opacity: 0.6;
+}

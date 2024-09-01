@@ -20,32 +20,37 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Initialize Splide sliders
+  // Function to initialize Splide sliders
   function initializeSplide(selector, autoScrollSpeed) {
-    return new Splide(selector, {
-      type: 'loop',
-      drag: 'free',
-      focus: 'center',
-      arrows: false, // Ensure arrows are disabled
-      perPage: 6,
-      pagination: false, // Ensure pagination is disabled
-      pauseOnHover: true,
-      autoScroll: {
-        pauseOnHover: false,
-        pauseOnFocus: false,
-        speed: autoScrollSpeed,
-      },
-    }).mount(window.splide.Extensions);
+    const element = document.querySelector(selector);
+    if (element) {
+      return new Splide(selector, {
+        type: 'loop',
+        drag: 'free',
+        focus: 'center',
+        arrows: false, // Ensure arrows are disabled
+        perPage: 6,
+        pagination: false, // Ensure pagination is disabled
+        pauseOnHover: true,
+        autoScroll: {
+          pauseOnHover: false,
+          pauseOnFocus: false,
+          speed: autoScrollSpeed,
+        },
+      }).mount(window.splide.Extensions);
+    } else {
+      console.error(`Element with selector "${selector}" not found.`);
+    }
   }
 
   // Initialize each Splide slider
-  const splide1 = initializeSplide('.splide', 0.2);
-  const splide2 = initializeSplide('.splide2', 0.3);
+  initializeSplide('.splide', 0.2);
+  initializeSplide('.splide2', 0.3);
   const splide3 = initializeSplide('.splide3', 0.24);
 
-  // Fetch and display JSON data
-  const jsonUrl = 'https://raw.githubusercontent.com/PlanRift/driveImagesToHTML/main/pets.JSON';
-  fetch(jsonUrl)
+  // Fetch and display JSON data for Pets
+  const petsJsonUrl = 'https://raw.githubusercontent.com/PlanRift/driveImagesToHTML/main/pets.JSON';
+  fetch(petsJsonUrl)
     .then(response => response.json())
     .then(data => {
       const splideList = document.getElementById('splide-list');
@@ -70,4 +75,68 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     })
     .catch(error => console.error('Error fetching JSON:', error));
+
+  // Fetch and display JSON data for Street
+  const streetJsonUrl = 'https://raw.githubusercontent.com/PlanRift/driveImagesToHTML/main/street.JSON';
+  fetch(streetJsonUrl)
+    .then(response => response.json())
+    .then(data => {
+      const splideListStreet = document.getElementById('splide-list-street');
+
+      if (splideListStreet) {
+        data.forEach(item => {
+          const listItem = document.createElement('li');
+          listItem.className = 'splide__slide';
+
+          const img = document.createElement('img');
+          img.src = item.url;
+          img.alt = item.name;
+
+          listItem.appendChild(img);
+          splideListStreet.appendChild(listItem);
+        });
+
+        // Re-initialize Splide after slides are added
+        const splide2 = initializeSplide('.splide2', 0.24);
+        splide2.refresh(); // Refresh the Splide instance to apply new slides
+      } else {
+        console.error('Element with id "splide-list-street" not found.');
+      }
+    })
+    .catch(error => console.error('Error fetching JSON:', error));
+
+    const allJsonUrls = [
+      'https://raw.githubusercontent.com/PlanRift/driveImagesToHTML/main/pets.JSON',
+      'https://raw.githubusercontent.com/PlanRift/driveImagesToHTML/main/street.JSON'
+    ];
+  
+    Promise.all(allJsonUrls.map(url => fetch(url).then(response => response.json())))
+      .then(allData => {
+        const splideListAll = document.getElementById('splide-list-all');
+  
+        if (splideListAll) {
+          // Flatten the array of arrays into a single array
+          const combinedData = allData.flat();
+  
+          combinedData.forEach(item => {
+            const listItem = document.createElement('li');
+            listItem.className = 'splide__slide';
+  
+            const img = document.createElement('img');
+            img.src = item.url;
+            img.alt = item.name;
+  
+            listItem.appendChild(img);
+            splideListAll.appendChild(listItem);
+          });
+  
+          const splide1 = initializeSplide('.splide1', 0.21);
+          splide1.refresh(); // Refresh the Splide instance to apply new slides
+        } else {
+          console.error('Element with id "splide-list-all" not found.');
+        }
+      })
+      .catch(error => console.error('Error fetching JSON:', error));
 });
+
+

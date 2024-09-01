@@ -28,5 +28,5 @@ document.addEventListener("DOMContentLoaded", function () {
 document.querySelector('.photography-box').addEventListener('click', function () {
   gsap.to('.overlay',{duration: 1, opacity: 1})
   gsap.to('header', {
-    duration: 1, scale: 0.40, opacity: 0, ease: "power1.in", onComplete: function () {window.location.href = 'photo.html';}}, "-=1")
+    duration: 1, scale: 0.40, opacity: 0, ease: "power1.in", onComplete: function () {window.location.href = '../photo/index.html';}}, "-=1")
 });

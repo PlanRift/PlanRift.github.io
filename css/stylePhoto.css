@@ -147,7 +147,7 @@ html {
     transform: translate(-50%, -50%);
     color: white; /* Adjust text color for visibility */
     text-align: center;
-    pointer-events: none; /* Ensure clicks pass through the h1 to the carousel */
+    pointer-events: none;
 }
 
 .splide__slide {
@@ -164,6 +164,7 @@ html {
     display: block;
     opacity: 0.6;
     transition: opacity 0.3s ease; /* Smooth transition for opacity change */
+    cursor: pointer;
 }
 
 .splide__slide:hover ~ .splide__slide img, /* Sibling slides */

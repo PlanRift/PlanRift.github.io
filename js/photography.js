@@ -7,15 +7,27 @@ document.addEventListener("DOMContentLoaded", function () {
     .to(".overlay", { duration: 2, opacity: 0, ease: "outSmooth" }, "+=0.5");
 
   // Main header click event
-  const mainHeader = document.querySelector(".gohome");
-  if (mainHeader) {
-    mainHeader.addEventListener("click", () => {
+  // const mainHeader = document.querySelector(".gohome");
+  // if (mainHeader) {
+  //   mainHeader.addEventListener("click", () => {
+  //     gsap.to(".overlay", {
+  //       duration: 2,
+  //       opacity: 1,
+  //       ease: "outSmooth",
+  //     }).then(() => {
+  //       window.location.href = "index.html"; // Redirect to the home page
+  //     });
+  //   });
+  // }
+  const allPhoto = document.querySelector(".splide__list__all");
+  if (allPhoto) {
+    allPhoto.addEventListener("click", () => {
       gsap.to(".overlay", {
         duration: 2,
         opacity: 1,
         ease: "outSmooth",
       }).then(() => {
-        window.location.href = "index.html"; // Redirect to the home page
+        window.location.href = "./allPic/index.html"; // Redirect to the home page
       });
     });
   }
@@ -43,10 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Initialize each Splide slider
-  initializeSplide('.splide', 0.2);
-  initializeSplide('.splide2', 0.3);
-  const splide3 = initializeSplide('.splide3', 0.24);
+const splide3 = initializeSplide('.splide3', 0.24);
 
   // Fetch and display JSON data for Pets
   const petsJsonUrl = 'https://raw.githubusercontent.com/PlanRift/driveImagesToHTML/main/pets.JSON';
@@ -58,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (splideList) {
         data.forEach(item => {
           const listItem = document.createElement('li');
-          listItem.className = 'splide__slide';
+          listItem.className = 'splide__slide splide__pet';
 
           const img = document.createElement('img');
           img.src = item.url;
@@ -86,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (splideListStreet) {
         data.forEach(item => {
           const listItem = document.createElement('li');
-          listItem.className = 'splide__slide';
+          listItem.className = 'splide__slide splide__street';
 
           const img = document.createElement('img');
           img.src = item.url;
@@ -97,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         // Re-initialize Splide after slides are added
-        const splide2 = initializeSplide('.splide2', 0.24);
+        const splide2 = initializeSplide('.splide2', -0.24);
         splide2.refresh(); // Refresh the Splide instance to apply new slides
       } else {
         console.error('Element with id "splide-list-street" not found.');
@@ -120,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
           combinedData.forEach(item => {
             const listItem = document.createElement('li');
-            listItem.className = 'splide__slide';
+            listItem.className = 'splide__slide splide__all';
   
             const img = document.createElement('img');
             img.src = item.url;

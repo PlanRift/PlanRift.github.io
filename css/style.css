@@ -370,10 +370,12 @@ header{
     border-radius: 4px;
     margin: 0 auto;
     margin-top: -15px;
+    
 }
 
 .dot h1{
-    margin: 0 auto;
+    font-family: "Gilda Display", serif;
+        margin: 0 auto;
     width: fit-content;
     line-height: 50px;
 }

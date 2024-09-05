@@ -4,21 +4,25 @@ document.addEventListener("DOMContentLoaded", function () {
   CustomEase.create("outSmooth", "M0,0 C0.139,0.336 0.202,1 1,1 ");
   
   gsap.timeline()
-    .to(".overlay", { duration: 2, opacity: 0, ease: "outSmooth" }, "+=0.5");
+    .to(".overlay", { duration: 2, opacity: 0, ease: "outSmooth" }, "+=0.5")
+    .from(".navbar",{ duration: 1.5, y:-100, ease:"outSmooth"}, "-=2")
+    .from(".main-header",{ duration:1.5, x:1000, ease:"outSmooth"}, "-=2")
+    .from(".second-header",{ duration:1.5, x:1000, ease:"outSmooth"}, "-=1.9")
+    .from(".header", {
+      backgroundPosition: "bottom left calc(-500px)",opacity:0, duration: 2, ease:"outSmooth"}, "=-2");
 
-  // Main header click event
-  // const mainHeader = document.querySelector(".gohome");
-  // if (mainHeader) {
-  //   mainHeader.addEventListener("click", () => {
-  //     gsap.to(".overlay", {
-  //       duration: 2,
-  //       opacity: 1,
-  //       ease: "outSmooth",
-  //     }).then(() => {
-  //       window.location.href = "index.html"; // Redirect to the home page
-  //     });
-  //   });
-  // }
+  const mainHeader = document.querySelector(".gohome");
+  if (mainHeader) {
+    mainHeader.addEventListener("click", () => {
+      gsap.to(".overlay", {
+        duration: 2,
+        opacity: 1,
+        ease: "outSmooth",
+      }).then(() => {
+        window.location.href = "../index.html"; // Redirect to the home page
+      });
+    });
+  }
   const allPhoto = document.querySelector(".splide__list__all");
   if (allPhoto) {
     allPhoto.addEventListener("click", () => {

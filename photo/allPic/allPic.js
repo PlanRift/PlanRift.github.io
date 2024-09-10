@@ -42,4 +42,17 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch(error => console.error('Error fetching JSON:', error));
   });
 
+  const mainHeader = document.querySelector(".gohome");
+  if (mainHeader) {
+    mainHeader.addEventListener("click", () => {
+      gsap.to(".overlay", {
+        duration: 2,
+        opacity: 1,
+        ease: "outSmooth",
+      }).then(() => {
+        window.location.href = "../index.html"; // Redirect to the home page
+      });
+    });
+  }
+
 

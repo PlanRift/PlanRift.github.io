@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
           document.getElementById('column-1'),
           document.getElementById('column-2'),
           document.getElementById('column-3'),
-          document.getElementById('column-4')
         ];
   
         // Flatten the array of arrays into a single array

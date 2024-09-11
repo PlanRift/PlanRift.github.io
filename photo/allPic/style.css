@@ -148,9 +148,11 @@ html {
     display: flex;
     justify-content: space-between;
     margin: 20px;
+    margin: 0px 20rem;
 }
 
 .column {
+    margin: 0 1rem;
     flex: 1;
     padding: 5px;
 }
@@ -158,7 +160,6 @@ html {
 .column img {
     width: 100%;
     margin-bottom: 5px;
-    border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 

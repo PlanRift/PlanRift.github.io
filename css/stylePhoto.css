@@ -150,55 +150,26 @@ html {
     height: 100vh;
 }
 
-.splide h1 {
-    font-family: "Gilda Display", serif;
-    font-weight: 400;
-    font-size: 4rem;
-    z-index: 2; /* Ensure the h1 is above the carousel */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white; /* Adjust text color for visibility */
-    text-align: center;
-    pointer-events: none;
-}
-
-.splide__slide {
-    position: relative; /* Allows the pseudo-element to be positioned relative to the image */
-    width: 16.5rem;
-    height: 16.5rem;
-    overflow: hidden; /* Ensures the gradient stays within the slide boundaries */
-}
-
-.splide__slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    opacity: 0.6;
-    transition: opacity 0.3s ease; /* Smooth transition for opacity change */
-    cursor: pointer;
-}
-
-.splide__slide:hover ~ .splide__slide img, /* Sibling slides */
-.splide__slide:hover img, /* Hovered slide */
-.splide__track:hover .splide__slide img { /* All images when track is hovered */
-    opacity: 1;
-}
-.splide__slide::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.5) 100%);
-    pointer-events: none; /* Ensures that the gradient overlay doesn’t interfere with interactions */
-    z-index: 1; /* Places the gradient above the image */
-}
-
 .container {
+    position: relative;
     width: 100%;
-    margin: 0 auto;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    margin: 0px 20rem;
+}
+
+.column {
+    margin: 0 1rem;
+    flex: 1;
+    padding: 5px;
+}
+
+.column img {
+    width: 100%;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }

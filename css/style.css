@@ -539,3 +539,27 @@ header{
         text-align: center;
     }
 }
+
+.coming-soon {
+    width: 200px;
+    height: 100px;
+    background-color: black;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    border-color: white;
+    border-width: 0.5px;
+    border-style: solid;
+    opacity: 0;
+}
+
+.coming-soon h1 {
+    color: white;
+    font-size: 20px;
+    font-family: "Cormorant Garamond", serif;
+}

@@ -157,19 +157,53 @@ html {
 
 .image-container {
     display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
     justify-content: space-between;
-    margin: 20px;
-    margin: 0px 20rem;
+    margin-bottom: 20px;
 }
 
-.column {
-    margin: 0 1rem;
-    flex: 1;
-    padding: 5px;
-}
-
-.column img {
-    width: 100%;
-    margin-bottom: 5px;
+.row img {
+    width: auto;
+    height: 200px; /* Adjust this to make sure images are a consistent height */
+    object-fit: cover; /* Ensures images are not stretched */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 8rem;
 }
+
+.row-1 img{
+    height: 630px;
+    
+}
+
+.row-2 img{
+    height: 700px;
+    width: 900px;
+}
+
+.row-3 img{
+    height: 600px;
+    width: 600px;
+}
+
+.row-4 img{
+    height: 600px;
+    width: 450px;
+}
+
+.row-5 img{
+    height: 700px;
+    width: 900px;
+}
+
+.row-6 img{
+    height: 630px;
+}
+
+
+
+
+

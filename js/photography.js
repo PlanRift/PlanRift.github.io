@@ -12,33 +12,35 @@ document.addEventListener("DOMContentLoaded", function () {
       backgroundPosition: "bottom left calc(-500px)", opacity: 0, duration: 2, ease: "outSmooth"
     }, "=-2");
     
-  const allJsonUrls = [
-    'https://raw.githubusercontent.com/PlanRift/driveImagesToHTML/main/pets.JSON',
-    'https://raw.githubusercontent.com/PlanRift/driveImagesToHTML/main/street.JSON'
-  ];
-
-  Promise.all(allJsonUrls.map(url => fetch(url).then(response => response.json())))
-    .then(allData => {
-      const columns = [
-        document.getElementById('column-1'),
-        document.getElementById('column-2'),
-        document.getElementById('column-3'),
-      ];
-
-      // Flatten the array of arrays into a single array
-      const combinedData = allData.flat();
-
-      combinedData.forEach((item, index) => {
-        const img = document.createElement('img');
-        img.src = item.url;
-        img.alt = item.name;
-
-        // Distribute images evenly across the columns
-        const columnIndex = index % columns.length;
-        columns[columnIndex].appendChild(img);
-      });
-    })
-    .catch(error => console.error('Error fetching JSON:', error));
+    const allJsonUrls = [
+      'https://raw.githubusercontent.com/PlanRift/driveImagesToHTML/main/pets.JSON',
+      'https://raw.githubusercontent.com/PlanRift/driveImagesToHTML/main/street.JSON'
+    ];
+    
+    Promise.all(allJsonUrls.map(url => fetch(url).then(response => response.json())))
+      .then(allData => {
+        const rows = [
+          [allData[1][4], allData[1][1], allData[0][7]],
+          [allData[1][20], allData[1][38]],
+          [allData[1][30], allData[1][31], allData[1][33]],
+          [allData[0][6], allData[1][9], allData[1][8], allData[1][7]],
+          [allData[1][6], allData[0][4]],
+          [allData[0][1], allData[1][21], allData[1][5]]
+        ];
+    
+        // Loop through each row to insert images
+        rows.forEach((row, index) => {
+          const rowElement = document.getElementById(`row-${index + 1}`);
+          row.forEach(item => {
+            const img = document.createElement('img');
+            img.src = item.url;
+            img.alt = item.name;
+            rowElement.appendChild(img);
+          });
+        });
+      })
+      .catch(error => console.error('Error fetching JSON:', error));
+    
 
   const mainHeader = document.querySelector(".gohome");
   if (mainHeader) {

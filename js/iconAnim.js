@@ -5,22 +5,36 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// script.js
 
 document.addEventListener('DOMContentLoaded', function () {
   const dot = document.getElementById('dot');
   const drawer = document.querySelector('.drawer');
   const blackTint = document.querySelector(".black-tint")
-  const originalBottom = getComputedStyle(drawer).bottom; // Store the original bottom value
+  const originalBottom = getComputedStyle(drawer).bottom;
+  const home = document.getElementById('home');
   let drawerOpen = false;
 
+  window.addEventListener('wheel', function (event) {
+
+    if (event.deltaY > 0) {
+      drawer.style.bottom = '0';
+      blackTint.style.opacity = '1';
+      dot.classList.add('open');
+      
+    } else if (event.deltaY < 0) {
+      drawer.style.bottom = originalBottom;
+      blackTint.style.opacity = '0';
+      dot.classList.remove('open');
+      
+    }
+  });
   dot.addEventListener('click', function () {
     if (drawerOpen) {
       drawer.style.bottom = originalBottom;
-      blackTint.style.opacity = '0'; // Move drawer back to its original position
+      blackTint.style.opacity = '0'; 
     } else {
       drawer.style.bottom = '0';
-      blackTint.style.opacity = '1'; // Move drawer up
+      blackTint.style.opacity = '1';
     }
     drawerOpen = !drawerOpen;
   });

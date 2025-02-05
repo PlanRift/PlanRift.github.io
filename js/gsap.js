@@ -30,14 +30,3 @@ document.querySelector('.photography-box').addEventListener('click', function ()
   gsap.to('header', {
     duration: 1, scale: 0.40, opacity: 0, ease: "power1.in", onComplete: function () {window.location.href = '../photo/index.html';}}, "-=1")
 });
-
-document.querySelector('.videography-box').addEventListener('click', function () {
-  gsap.to('.coming-soon',{duration: 1, opacity: 1})
-  gsap.to('.coming-soon',{duration: 1, opacity: 0}, "+=1")
-});
-
-document.querySelector('.about-box').addEventListener('click', function () {
-  gsap.to('.coming-soon',{duration: 1, opacity: 1})
-  gsap.to('.coming-soon',{duration: 1, opacity: 0}, "+=1")
-});
-

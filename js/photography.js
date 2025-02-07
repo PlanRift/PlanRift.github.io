@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .from(".main-header", { duration: 1.5, x: 1000, ease: "outSmooth" }, "-=2")
     .from(".second-header", { duration: 1.5, x: 1000, ease: "outSmooth" }, "-=1.9")
     .from(".header", {
-      backgroundPosition: "bottom left calc(-500px)", opacity: 0, duration: 2, ease: "outSmooth"
+     opacity: 0, duration: 2, ease: "outSmooth"
     }, "=-2");
     
     const allJsonUrls = [

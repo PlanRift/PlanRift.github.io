@@ -95,6 +95,14 @@ html {
     letter-spacing: 5px;
 }
 
+@media (max-width: 700px) {
+    .nav-world,
+    .nav-library {
+        display: none; /* Hide the elements */
+    }
+}
+
+
 /* header */
 
 .logo-main {
@@ -112,13 +120,46 @@ html {
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-bottom: 20rem;
+    margin-bottom: 10vw;
     background-image: url('https://lh3.googleusercontent.com/d/1X1KuQQgpeMbHXnjJYWrT97ZtTAvGX-03=s1000');
     background-size: 75%;
-    /* Ensure the background covers the entire div */
-    background-position: bottom left calc(40px);
+    background-position: bottom left;
     background-repeat: no-repeat;
+}
 
+.header h1{
+    font-family: "Gilda Display", serif;
+    font-size: 10rem;
+    font-weight: 400;
+    margin-left: auto;
+    width: max-content;
+}
+.main-header{
+    padding-top: 0rem;
+}
+
+
+@media (max-width: 952px){
+    .header{
+        background-size: 95%;
+        
+    }
+    .header h1{
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 512px){
+    .header{
+        background-position: bottom center;
+    }
+    .header h1{
+        font-size: 3rem;
+        margin-right: auto;
+    }
+    .main-header{
+        padding-top: 10rem;
+    }
 }
 
 .textbox {
@@ -128,26 +169,11 @@ html {
     font-family: "Gilda Display", serif;
 }
 
-.main-header {
-    font-family: "Gilda Display", serif;
-    font-size: 10rem;
-    font-weight: 400;
-    margin-left: auto;
-    width: max-content;
-}
-
-
-.second-header {
-    font-family: "Gilda Display", serif;
-    font-size: 10rem;
-    font-weight: 400;
-    width: max-content;
-    margin-left: auto;
-}
 
 .container-first {
     position: relative;
     height: 100vh;
+    padding: 20px; /* Ensure some padding around the content */
 }
 
 .container {
@@ -158,50 +184,74 @@ html {
 .image-container {
     display: flex;
     flex-direction: column;
+    gap: 20px; /* Gap between rows */
 }
 
 .row {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    gap: 20px; /* Gap between images */
 }
 
 .row img {
-    width: auto;
-    height: 200px; /* Adjust this to make sure images are a consistent height */
+    width: 100%; /* Ensures images scale responsively */
+    height: auto; /* Maintain aspect ratio */
     object-fit: cover; /* Ensures images are not stretched */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 8rem;
 }
 
-.row-1 img{
-    height: 630px;
-    
+.row-1 img {
+    flex: 1 1 calc(25% - 20px); 
+    height: clamp(200px, 20vw, 400px);
 }
 
-.row-2 img{
-    height: 700px;
-    width: 900px;
+.row-2 img {
+    flex: 1 1 calc(50% - 20px); 
+    height: clamp(250px, 25vw, 450px);
 }
 
-.row-3 img{
-    height: 600px;
-    width: 600px;
+.row-3 img {
+    flex: 1 1 calc(33.33% - 20px);
+    height: clamp(200px, 20vw, 400px);
 }
 
-.row-4 img{
-    height: 600px;
-    width: 450px;
+.row-4 img {
+    flex: 1 1 calc(25% - 20px);
+    height: clamp(180px, 18vw, 380px);
 }
 
-.row-5 img{
-    height: 700px;
-    width: 900px;
+.row-5 img {
+    flex: 1 1 calc(50% - 20px);
+    height: clamp(250px, 25vw, 450px);
 }
 
-.row-6 img{
-    height: 630px;
+.row-6 img {
+    flex: 1 1 calc(33.33% - 20px);
+    height: clamp(200px, 20vw, 400px);
 }
+
+@media (max-width: 810px) {
+    .row img {
+        flex: 1 1 calc(50% - 10px);
+        height: clamp(150px, 18vw, 300px);
+    }
+}
+
+@media (max-width: 512px) {
+    .row img {
+        flex: 1 1 calc(100% - 10px);
+        height: clamp(100px, 25vw, 200px);
+    }
+}
+
+@media (max-width: 385px) {
+    .row img {
+        flex: 1 1 calc(100% - 10px);
+        height: clamp(50px, 26vw, 100px);
+    }
+}
+
+
 
 
 

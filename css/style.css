@@ -278,7 +278,7 @@ header{
     }
 }
 
-@media screen and (max-width:700px) {
+@media screen and (max-width:954px) {
     .bottom-header-img {
         width: 100%;
         filter: brightness(0.7);
@@ -286,11 +286,21 @@ header{
     }
 
     .bottom-header-title{
-        font-size: 7vw;
+        font-size: 4vw;
+        margin-top: -2rem;
     }
 
     .bottom-header-title-2{
-        font-size: 17vw;
+        font-size: 10vw;
+    }
+
+    .bottom-header-title:hover{
+        font-size: 4vw;
+        margin-top: -2rem;
+    }
+
+    .bottom-header-title-2:hover{
+        font-size: 10vw;
     }
 
     .bottom-header-desc {
@@ -317,6 +327,24 @@ header{
     .header-title-2 {
         font-size: 12vw;
         margin-left: 47vw;
+    }
+}
+
+@media screen and (max-width:580px){
+    .bottom-header-title{
+        font-size: 6vw;
+    }
+
+    .bottom-header-title-2{
+        font-size: 14vw;
+    }
+
+    .bottom-header-title:hover{
+        font-size: 6vw;
+    }
+
+    .bottom-header-title-2:hover{
+        font-size: 14vw;
     }
 }
 
@@ -361,6 +389,12 @@ header{
     margin: 0 20px;
 }
 
+@media screen and (max-width:700px){
+    .drawer-box div {
+        height: 33rem;
+    }
+}
+
 /* arrow */
 .dot {
     display: block;
@@ -370,7 +404,6 @@ header{
     border-radius: 4px;
     margin: 0 auto;
     margin-top: -15px;
-    
 }
 
 .open{

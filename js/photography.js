@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
     "https://raw.githubusercontent.com/PlanRift/driveImagesToHTML/main/pets.JSON",
     "https://raw.githubusercontent.com/PlanRift/driveImagesToHTML/main/street.JSON"
   ];
-
+  let rows = []
   Promise.all(allJsonUrls.map(url => fetch(url).then(response => response.json())))
     .then(allData => {
-      const rows = [
+      rows = [
         [allData[1][4], allData[1][1], allData[0][7]],
         [allData[1][20], allData[1][38]],
         [allData[1][30], allData[1][31], allData[1][33]],
@@ -40,24 +40,116 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch(error => console.error("Error fetching JSON:", error));
 
-    document.addEventListener("click", function (e) {
-      if (e.target.tagName === "IMG") { 
-        const mainImage = e.target.src; 
-        const imageModal = document.getElementById("image-modal");
-        const content = document.getElementById("content-modal");
-        const modalImage = document.getElementById("modal-image"); 
-        modalImage.src = mainImage; 
-        content.classList.add("open-content");
-        imageModal.classList.add("open-modal");
-      } else if (e.target.classList.contains("modal")) {
-        const content = document.getElementById("content-modal");
-        const imageModal = document.getElementById("image-modal");
-        content.classList.remove("open-content");
-        imageModal.classList.remove("open-modal");
+  document.addEventListener("click", function (e) {
+    if (e.target.tagName === "IMG") {
+      const mainImage = e.target.src;
+      const imageModal = document.getElementById("image-modal");
+      const content = document.getElementById("content-modal");
+      const modalImage = document.getElementById("modal-image");
+      modalImage.src = mainImage;
+      content.classList.add("open-content");
+      imageModal.classList.add("open-modal");
+    } else if (e.target.classList.contains("modal")) {
+      const content = document.getElementById("content-modal");
+      const imageModal = document.getElementById("image-modal");
+      content.classList.remove("open-content");
+      imageModal.classList.remove("open-modal");
+    }
+  });
+
+  document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("lBtn")) {
+      navigateDownOneArray(rows)
+    } else if (e.target.classList.contains("rBtn")) {
+      navigateUpOneArray(rows)
+    }
+  })
+
+  function navigateUpOneArray(rows) {
+    const modalImage = document.getElementById("modal-image");
+  
+    if (modalImage) {
+      const currentSrc = modalImage.src;
+  
+      let found = false;
+      let nextUrl = null;
+  
+      for (let i = 0; i < rows.length; i++) {
+        for (let j = 0; j < rows[i].length; j++) {
+          const item = rows[i][j];
+  
+          if (found && item.url) {
+            nextUrl = item.url;
+            break;
+          }
+  
+          if (item.url === currentSrc) {
+            found = true;
+          }
+        }
+  
+        if (nextUrl) break;
       }
-    });
-    
-    
+      if (!nextUrl && rows.length > 0 && rows[0].length > 0) {
+        nextUrl = rows[0][0].url;
+      }
+
+      if (nextUrl) {
+        modalImage.src = nextUrl;
+      }
+    } else {
+      console.log("modalImage element not found.");
+    }
+  }
+  
+  function navigateDownOneArray(rows) {
+    const modalImage = document.getElementById("modal-image");
+  
+    if (modalImage) {
+      const currentSrc = modalImage.src;
+      let found = false;
+      let prevUrl = null;
+  
+      for (let i = rows.length - 1; i >= 0; i--) {
+        for (let j = rows[i].length - 1; j >= 0; j--) {
+          const item = rows[i][j];
+  
+          if (found && item.url) {
+            prevUrl = item.url;
+            break;
+          }
+  
+          if (item.url === currentSrc) {
+            found = true; 
+          }
+        }
+  
+        if (prevUrl) break;
+      }
+  
+      if (!prevUrl) {
+        const lastRow = rows[rows.length - 1];
+        const lastItem = lastRow[lastRow.length - 1];
+        if (lastItem && lastItem.url) {
+          prevUrl = lastItem.url;
+        }
+      }
+  
+
+      if (prevUrl) {
+        modalImage.src = prevUrl;
+      }
+    } else {
+      console.log("modalImage element not found.");
+    }
+  }
+  
+  
+  
+  
+  
+
+
 
   const mainHeader = document.querySelector(".gohome");
   if (mainHeader) {

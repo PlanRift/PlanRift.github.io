@@ -44,9 +44,11 @@ body {
 }
 
 img {
-    user-select: none; /* Prevents image selection */
-    -webkit-user-drag: none; /* Prevents dragging in WebKit browsers */
-  }
+    user-select: none;
+    /* Prevents image selection */
+    -webkit-user-drag: none;
+    /* Prevents dragging in WebKit browsers */
+}
 
 html {
     background-color: black;
@@ -281,7 +283,6 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
     opacity: 0;
     pointer-events: none;
     transition: var(--transition);
@@ -290,11 +291,21 @@ html {
 .modal-content {
     transform: translateY(1500px);
     opacity: 0;
-    pointer-events: none;
     transition: var(--transition);
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
+    pointer-events: none;
+}
+
+.modal-content h1{
+    font-family: "Tomorrow", serif;
+    font-style: normal;
+    font-size: 3rem;
+    margin: 4rem;
+    cursor: pointer;
+    z-index: 999;
+    pointer-events: all;
 }
 
 .modal-content img {
@@ -303,6 +314,7 @@ html {
     border-radius: 10px;
     cursor: default;
     transition: var(--transition);
+    pointer-events: all;
 }
 
 .open-modal {
@@ -315,7 +327,7 @@ html {
     transform: translateY(0px) !important;
 }
 
-.end-footer{
+.end-footer {
     font-family: "Gilda Display", serif;
     width: 100vw;
     height: 10vh;
@@ -325,7 +337,7 @@ html {
     width: max-content;
 }
 
-.end-footer h1{
+.end-footer h1 {
     margin-left: auto;
     margin-right: auto;
     width: max-content;

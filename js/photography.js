@@ -12,33 +12,43 @@ document.addEventListener("DOMContentLoaded", function () {
       opacity: 0, duration: 2, ease: "outSmooth"
     }, "=-2");
 
-  const allJsonUrls = [
-    "https://raw.githubusercontent.com/PlanRift/driveImagesToHTML/main/pets.JSON",
-    "https://raw.githubusercontent.com/PlanRift/driveImagesToHTML/main/street.JSON"
-  ];
-  let rows = []
-  Promise.all(allJsonUrls.map(url => fetch(url).then(response => response.json())))
-    .then(allData => {
-      rows = [
-        [allData[1][4], allData[1][1], allData[0][7]],
-        [allData[1][20], allData[1][38]],
-        [allData[1][30], allData[1][31], allData[1][33]],
-        [allData[0][6], allData[1][9], allData[1][8], allData[1][7]],
-        [allData[1][6], allData[0][4]],
-        [allData[0][1], allData[1][21], allData[1][5]]
-      ];
-
-      rows.forEach((row, index) => {
-        const rowElement = document.getElementById(`row-${index + 1}`);
-        row.forEach(item => {
-          const img = document.createElement("img");
-          img.src = item.url;
-          img.alt = item.name;
-          rowElement.appendChild(img);
+    const allJsonUrls = [
+      "https://raw.githubusercontent.com/PlanRift/driveImagesToHTML/main/pets.JSON",
+      "https://raw.githubusercontent.com/PlanRift/driveImagesToHTML/main/street.JSON"
+    ];
+    
+    Promise.all(allJsonUrls.map(url => fetch(url).then(response => response.json())))
+      .then(allData => {
+        // Combine all data into a single object using the file name as the key
+        const imageMap = {};
+        allData.flat().forEach(item => {
+          imageMap[item.name] = item.url;
         });
-      });
-    })
-    .catch(error => console.error("Error fetching JSON:", error));
+    
+        // Define rows using filenames instead of array indexes
+        const rows = [
+          [imageMap["23.jpg"], imageMap["22.jpg"], imageMap["8.jpg"]],
+          [imageMap["18.jpg"], imageMap["27.jpg"]],
+          [imageMap["DSC01728.jpg"], imageMap["2-DSC01677.jpg"], imageMap["1-DSC01720.jpg"]],
+          [imageMap["1-DSC02356.jpg"], imageMap["2-DSC02347.jpg"], imageMap["7.jpg"], imageMap["DSC09287.jpg"]],
+          [imageMap["DSC00053.jpg"], imageMap["DSC00104.jpg"]],
+          [imageMap["6-DSC01541.jpg"], imageMap["5-DSC01577.jpg"], imageMap["7-DSC01475.jpg"]],
+          [imageMap["DSC00233.jpg"], imageMap["13.jpg"]]
+        ];
+    
+        rows.forEach((row, index) => {
+          const rowElement = document.getElementById(`row-${index + 1}`);
+          row.forEach(url => {
+            if (url) {
+              const img = document.createElement("img");
+              img.src = url;
+              rowElement.appendChild(img);
+            }
+          });
+        });
+      })
+      .catch(error => console.error("Error fetching JSON:", error));
+    
 
   document.addEventListener("click", function (e) {
     if (e.target.tagName === "IMG") {

@@ -251,6 +251,11 @@ html {
     height: clamp(200px, 30vw, 900px);
 }
 
+.row-7 img {
+    flex: 1 1 calc(50% - 20px);
+    height: clamp(250px, 25vw, 450px);
+}
+
 @media (max-width: 810px) {
     .row img {
         flex: 1 1 calc(50% - 10px);

@@ -24,19 +24,10 @@ function initializeAnimations() {
   return ctx;
 }
 
-function reinitializeAnimations() {
-  const animationCtx = initializeAnimations();
-  animationCtx.revert();
-  initializeAnimations();
-}
 
 window.addEventListener("pageshow", (event) => {
-  if (event.persisted) {
-    reinitializeAnimations();
-  }
+  initializeAnimations();
 });
-
-document.addEventListener("DOMContentLoaded", initializeAnimations);
 
 
 

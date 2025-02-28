@@ -339,7 +339,6 @@ html {
     max-height: 90%;
     border-radius: 10px;
     cursor: default;
-    transition: var(--transition);
     pointer-events: all;
 }
 

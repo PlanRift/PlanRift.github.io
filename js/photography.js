@@ -16,7 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
       "https://raw.githubusercontent.com/PlanRift/driveImagesToHTML/main/pets.JSON",
       "https://raw.githubusercontent.com/PlanRift/driveImagesToHTML/main/street.JSON"
     ];
-    
+
+    let rows = []
     Promise.all(allJsonUrls.map(url => fetch(url).then(response => response.json())))
       .then(allData => {
         // Combine all data into a single object using the file name as the key
@@ -26,14 +27,16 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     
         // Define rows using filenames instead of array indexes
-        const rows = [
+        rows = [
           [imageMap["23.jpg"], imageMap["22.jpg"], imageMap["8.jpg"]],
           [imageMap["18.jpg"], imageMap["27.jpg"]],
           [imageMap["DSC01728.jpg"], imageMap["2-DSC01677.jpg"], imageMap["1-DSC01720.jpg"]],
           [imageMap["1-DSC02356.jpg"], imageMap["2-DSC02347.jpg"], imageMap["7.jpg"], imageMap["DSC09287.jpg"]],
           [imageMap["DSC00053.jpg"], imageMap["DSC00104.jpg"]],
           [imageMap["6-DSC01541.jpg"], imageMap["5-DSC01577.jpg"], imageMap["7-DSC01475.jpg"]],
-          [imageMap["DSC00233.jpg"], imageMap["13.jpg"]]
+          [imageMap["DSC00233.jpg"], imageMap["13.jpg"]],
+          [imageMap["DSC04618.jpg"], imageMap["DSC04583.jpg"], imageMap["DSC04614.jpg"]],
+          [imageMap["DSC08523.jpg"], imageMap["DSC08464(1)     .jpg"], imageMap["DSC08547.jpg"]]
         ];
     
         rows.forEach((row, index) => {
@@ -75,6 +78,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   })
 
+//problematic part lol where the animation doesnt work but the image did change
+
+  function changeImageWithFade(newSrc) {
+    const modalImage = document.getElementById("modal-image");
+  
+    if (modalImage) {
+      gsap.to(".modal-image-class", {
+        duration: 0.3,
+        opacity: 0,
+        onComplete: () => {
+          modalImage.src = newSrc;
+          gsap.to(".modal-image-class", { duration: 0.3, opacity: 1 });
+        }
+      });
+    }
+  }
+
   function navigateUpOneArray(rows) {
     const modalImage = document.getElementById("modal-image");
   
@@ -86,14 +106,14 @@ document.addEventListener("DOMContentLoaded", function () {
   
       for (let i = 0; i < rows.length; i++) {
         for (let j = 0; j < rows[i].length; j++) {
-          const item = rows[i][j];
+          const itemUrl = rows[i][j];
   
-          if (found && item.url) {
-            nextUrl = item.url;
+          if (found) {
+            nextUrl = itemUrl;
             break;
           }
   
-          if (item.url === currentSrc) {
+          if (modalImage.src.includes(itemUrl)) {
             found = true;
           }
         }
@@ -105,8 +125,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       if (nextUrl) {
-        modalImage.src = nextUrl;
-      }
+        changeImageWithFade(nextUrl)
+    }
     } else {
       console.log("modalImage element not found.");
     }
@@ -122,14 +142,14 @@ document.addEventListener("DOMContentLoaded", function () {
   
       for (let i = rows.length - 1; i >= 0; i--) {
         for (let j = rows[i].length - 1; j >= 0; j--) {
-          const item = rows[i][j];
+          const itemUrl = rows[i][j];
   
-          if (found && item.url) {
-            prevUrl = item.url;
+          if (found) {
+            prevUrl = itemUrl;
             break;
           }
   
-          if (item.url === currentSrc) {
+          if (modalImage.src.includes(itemUrl)) {
             found = true; 
           }
         }

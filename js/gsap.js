@@ -1,5 +1,5 @@
 function initializeAnimations() {
-  const ctx = gsap.context(() => {
+  gsap.context(() => {
     CustomEase.create("inOut", "M0,0 C0.7,0 0.198,1 1,1 ");
     CustomEase.create("outSmooth", "M0,0 C0.139,0.336 0.202,1 1,1 ");
 
@@ -20,8 +20,6 @@ function initializeAnimations() {
       .from(".drawer", { duration: 2.5, opacity: 0, y: 1000, ease: "outSmooth" }, "-=3.5")
       .from(".splide", { duration: 2, opacity: 0, ease: "outSmooth" }, "-=1");
   });
-
-  return ctx;
 }
 
 

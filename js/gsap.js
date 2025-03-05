@@ -40,3 +40,12 @@ document.querySelector('.photography-box').addEventListener('click', function ()
     duration: 1, scale: 0.40, opacity: 0, ease: "power1.in", onComplete: function () { window.location.href = '../photo'; }
   }, "-=1")
 });
+
+
+document.querySelectorAll('.videography-box, .about-box').forEach(element => {
+  element.addEventListener('click', function () {
+    CustomEase.create("inOut", "M0,0 C0.7,0 0.198,1 1,1 ");
+    gsap.to('.overlay-comingSoon', { duration: 1, opacity: 1, ease: "inOut" })
+    gsap.to('.overlay-comingSoon', { duration: 1, opacity: 0, delay: 2, ease: "inOut" })
+  })
+});

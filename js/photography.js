@@ -45,7 +45,8 @@ Promise.all(allJsonUrls.map(url => fetch(url).then(response => response.json()))
       [imageMap["6-DSC01541.jpg"], imageMap["5-DSC01577.jpg"], imageMap["7-DSC01475.jpg"]],
       [imageMap["DSC00233.jpg"], imageMap["13.jpg"]],
       [imageMap["DSC04618.jpg"], imageMap["DSC04583.jpg"], imageMap["DSC04614.jpg"]],
-      [imageMap["DSC08523.jpg"], imageMap["DSC08464(1).jpg"], imageMap["DSC08547.jpg"]]
+      [imageMap["DSC08523.jpg"], imageMap["DSC08464(1).jpg"], imageMap["DSC08547.jpg"]],
+      [imageMap["DSC07966.jpg"], imageMap["DSC07993.jpg"], imageMap["DSC07994.jpg"],imageMap["DSC07972.jpg"]]
     ];
 
     rows.forEach((row, index) => {

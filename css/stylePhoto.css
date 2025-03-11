@@ -220,6 +220,7 @@ html {
     /* Ensures images are not stretched */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    margin-top:70px;
 }
 
 .row-1 img {
@@ -229,7 +230,7 @@ html {
 
 .row-2 img {
     flex: 1 1 calc(50% - 20px);
-    height: clamp(250px, 25vw, 450px);
+    height: clamp(200px, 30vw, 900px);
 }
 
 .row-3 img {
@@ -239,12 +240,12 @@ html {
 
 .row-4 img {
     flex: 1 1 calc(25% - 20px);
-    height: clamp(180px, 30vw, 580px);
+    height: clamp(200px, 30vw, 900px);
 }
 
 .row-5 img {
     flex: 1 1 calc(50% - 20px);
-    height: clamp(250px, 25vw, 450px);
+    height: clamp(200px, 30vw, 900px);
 }
 
 .row-6 img {
@@ -254,7 +255,7 @@ html {
 
 .row-7 img {
     flex: 1 1 calc(50% - 20px);
-    height: clamp(250px, 25vw, 450px);
+    height: clamp(200px, 30vw, 900px);
 }
 
 .row-8 img {
@@ -264,6 +265,7 @@ html {
 
 .row-8 img:nth-child(2) {
     flex: 1 1 calc(63% - 20px);
+    height: clamp(200px, 30vw, 900px);
 }
 
 .row-9 img {
@@ -273,7 +275,7 @@ html {
 
 .row-10 img {
     flex: 1 1 calc(25% - 20px);
-    height: clamp(180px, 30vw, 580px);
+    height: clamp(200px, 30vw, 900px);
 }
 
 
